@@ -12,18 +12,18 @@ https://templatemo.com/tm-578-first-portfolio
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #535da1;
-  --secondary-color:              #14B789;
+  --primary-color:                #095c5b;
+  --secondary-color:              #1c2834;
   --section-bg-color:             #f9f9f9;
   --dark-color:                   #000000;
-  --p-color:                      #717275;
+  --p-color:                      #364981;
   --border-color:                 #e9eaeb;
-  --featured-border-color:        #727aab;
+  --featured-border-color:        #000000;
 
   --body-font-family:             'DM Sans', sans-serif;
 
   --h1-font-size:                 62px;
-  --h2-font-size:                 48px;
+  --h2-font-size:                 40px;
   --h3-font-size:                 36px;
   --h4-font-size:                 32px;
   --h5-font-size:                 24px;
@@ -33,7 +33,7 @@ https://templatemo.com/tm-578-first-portfolio
   --copyright-font-size:          14px;
 
   --border-radius-large:          100px;
-  --border-radius-medium:         20px;
+  --border-radius-medium:         10px;
   --border-radius-small:          10px;
 
   --font-weight-normal:           400;
@@ -206,10 +206,10 @@ strong {
   animation: spinner .9s linear infinite;
 }
 
-@-webkit-@keyframes spinner {
+/* @-webkit-@keyframes spinner {
   to {transform: rotate(360deg);
   }
-}
+} */
 
 @keyframes spinner {
   to {transform: rotate(360deg);}
@@ -495,7 +495,7 @@ strong {
 }
 
 .hero h2 {
-	font-size: 38px;
+	font-size: 36px;
 }
 
 .hero-text {
@@ -505,13 +505,13 @@ strong {
 }
 
 .hero-image-wrap {
-  background: var(--white-color);
-  border-radius: 100%;
-  width: 350px;
-  height: 350px;
-  position: absolute;
-  z-index: 22;
-  top: -50px;
+  /* background: var(--white-color); */
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  /* position: absolute; */
+  z-index: 100%;
+  top: 10px;
   right: 0;
   left: 0;
   margin: auto;
@@ -546,11 +546,19 @@ strong {
   border-radius: var(--border-radius-medium);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+  transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.profile-thumb:hover {
+  transform: scale(1.02); 
+  /* Slightly scale up on hover */
 }
 
 .profile-title {
   border-bottom: 1px solid var(--border-color);
   padding: 15px 30px;
+  background-color: var(--light-background-color); /* Added background color for contrast */
 }
 
 .profile-small-title {
@@ -561,25 +569,27 @@ strong {
   margin-right: 10px;
   padding: 13px 30px;
   display: inline-block;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.profile-body {
+  padding: 15px; /* Added padding for better spacing */
 }
 
 .profile-body p {
-  margin-bottom: 0;
+  margin-bottom: 10px; /* Added margin for spacing between paragraphs */
+  line-height: 1.6; /* Improved line height for readability */
 }
 
 .profile-body p:nth-of-type(even) {
   background: var(--white-color);
 }
 
-.about-image {
-  border-radius: var(--border-radius-medium);
-}
-
 .about-thumb {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 20px; /* Adjusted padding for consistency */
+  background-color: var(--light-background-color); /* Added background color for the thumb */
+  border-radius: var(--border-radius-medium); /* Ensure consistent border radius */
 }
-
 
 /*---------------------------------------
   FEATURED              
