@@ -1216,14 +1216,18 @@ strong {
     }
     
     .carousel-slide {
-        min-width: 100%;
-        display: none;
-    }
+      min-width: 100%;
+      flex: 0 0 100%; /* ✅ Ensures each slide takes full width */
+      transition: transform 0.5s ease;
+  }
     
     .carousel-slide.active {
         display: block;
     }
     
+
+   
+
     /* Arrow Navigation Styles */
     .carousel-arrow {
         position: absolute;
