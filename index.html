@@ -51,13 +51,6 @@ https://templatemo.com/tm-578-first-portfolio
 
                 <a href="index.html" class="navbar-brand mx-auto mx-lg-0">Noyo Tech</a>
 
-                <div class="d-flex align-items-center d-lg-none">
-                    <i class="navbar-icon bi-telephone-plus me-3"></i>
-                    <a class="custom-btn btn" href="#section_5">
-                        120-240-9600
-                    </a>
-                </div>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5">
                         <li class="nav-item">
@@ -547,39 +540,30 @@ https://templatemo.com/tm-578-first-portfolio
         <script src="js/jquery.magnific-popup.min.js"></script>
         <script src="js/magnific-popup-options.js"></script>
         <script src="js/custom.js"></script>
+        <script src="script.js"></script>
         
-
-        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-        <script>
-            (function(){
-                emailjs.init("hassaananjum155@gmail.com"); // Replace with your EmailJS user ID
-            })();
+    </body>
+    <script>
+        function sendEmail(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+            
+            // Get the form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Create the email subject and body
+            const subject = `Contact Form Submission from ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+            
+            // Create the mailto URL with all parameters
+            const mailtoUrl = `mailto:hassaananjum155@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open the user's email client
+            window.location.href = mailtoUrl;
+        }
         </script>
 
-<script>
-    function sendEmail(event) {
-        event.preventDefault(); // Prevent the default form submission
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        const templateParams = {
-            from_name: name,
-            from_email: email,
-            message: message,
-        };
-
-        emailjs.send('hassaananjum155@gmail.com', 'hassaananjum155@gmail.com', templateParams)
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                alert('Message sent successfully!');
-            }, function(error) {
-                console.log('FAILED...', error);
-                alert('Failed to send message. Please try again later.');
-            });
-    }
-</script>
-
-    </body>
 </html>
